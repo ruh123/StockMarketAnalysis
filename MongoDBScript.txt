@@ -1,0 +1,48 @@
+{
+    name: "Adobe Inc.",
+    symbol: "ADBE",
+    stock_exchange: "XNAS",
+    industry: "Software",
+    currency: "Dollar"
+    
+}
+{
+    
+    name: "Dick's Sporting Goods Inc.",
+    symbol: "DKS",
+    stock_exchange: "XNYS",
+    industry: "Specialty Retail",
+    currency: "Dollar"
+    
+
+}
+{
+    
+    name: "Tesla Inc.",
+    symbol: "TSLA",
+    stock_exchange: "XNAS",
+    industry: "Automobile",
+    currency: "Dollar"
+    
+
+}
+{
+    
+    name: "iRobot Corp.",
+    symbol: "IRBT",
+    stock_exchange: "XNAS",
+    industry: "Housewares",
+    currency: "Dollar"
+    
+
+}
+{
+    
+    name: "North Dallas Bank & Trust Co.",
+    symbol: "NODB",
+    stock_exchange: "OOTC",
+    industry: "Banking",
+    currency: "Dollar"
+    
+
+}

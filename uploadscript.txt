@@ -1,0 +1,27 @@
+import pandas as pd
+from pymongo import MongoClient
+import json
+
+#def mongoimport(csv_path, db_name, coll_name, db_url='localhost', db_port=27000)
+
+#csv_path = "D:\Anitha\Courses\Fall2021\CPSC531-AdvDB\Project\Data\ADBE.csv"
+csv_path = "D:\Anitha\Courses\Fall2021\CPSC531-AdvDB\Project\Data\DKS.csv"
+db_name = "StocksDB"
+coll_name = "stock_data"
+db_url = 'localhost'
+db_port = 27017
+""" Imports a csv file at path csv_name to a mongo colection
+returns: count of the documants in the new collection
+"""
+client = MongoClient(db_url, db_port)
+db = client[db_name]
+coll = db[coll_name]
+data = pd.read_csv(csv_path)
+data.insert(0, "Symbol", "NODB", True )
+data.insert(1,"Company_id", "6195f21ea79f4a1dc14668b2", True)
+#DKS-"6195f21ea79f4a1dc14668a9", TSLA="6195f21ea79f4a1dc14668ac",IRBT="6195f21ea79f4a1dc14668af",
+#ADBE-6195f21ea79f4a1dc14668a6, NODB=ObjectId("6195f21ea79f4a1dc14668b2")
+payload = json.loads(data.to_json(orient='records'))
+#coll.remove()
+coll.insert(payload)
+print(coll.count())
